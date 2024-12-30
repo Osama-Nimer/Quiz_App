@@ -5,6 +5,131 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Quiz/GetQuiz": {
+      "post": {
+        "tags": [
+          "Quiz"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Quiz/GetAllQuizzes": {
+      "get": {
+        "tags": [
+          "Quiz"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Quiz/AddNewQuiz": {
+      "post": {
+        "tags": [
+          "Quiz"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/User/GetUser": {
       "post": {
         "tags": [
@@ -181,6 +306,20 @@
   },
   "components": {
     "schemas": {
+      "QuizDTO": {
+        "type": "object",
+        "properties": {
+          "quizID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subject": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserDTO": {
         "type": "object",
         "properties": {

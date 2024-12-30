@@ -1,5 +1,77 @@
 [
   {
+    "ContainingType": "Quiz_Api.Controllers.QuizController",
+    "Method": "AddNewQuiz",
+    "RelativePath": "api/Quiz/AddNewQuiz",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "QuizDTO",
+        "Type": "Data_Layer.QuizzesData\u002BQuizDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.QuizzesData\u002BQuizDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.QuizController",
+    "Method": "GetAllQuizzes",
+    "RelativePath": "api/Quiz/GetAllQuizzes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.QuizzesData\u002BQuizDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.QuizController",
+    "Method": "GetQuiz",
+    "RelativePath": "api/Quiz/GetQuiz",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "QuizDTO",
+        "Type": "Data_Layer.QuizzesData\u002BQuizDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.QuizzesData\u002BQuizDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Quiz_Api.Controllers.UserController",
     "Method": "IsUserExist",
     "RelativePath": "api/User",

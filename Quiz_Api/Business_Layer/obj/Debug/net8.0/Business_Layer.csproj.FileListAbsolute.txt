@@ -1,0 +1,16 @@
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\bin\Debug\net8.0\Business_Layer.deps.json
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\bin\Debug\net8.0\Business_Layer.dll
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\bin\Debug\net8.0\Business_Layer.pdb
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\bin\Debug\net8.0\Data_Layer.dll
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\bin\Debug\net8.0\Data_Layer.pdb
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.AssemblyInfoInputs.cache
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.AssemblyInfo.cs
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.sourcelink.json
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business.3851A4FC.Up2Date
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.dll
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\refint\Business_Layer.dll
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\Business_Layer.pdb
+C:\Users\ASUS\Documents\FullStack\Projects\Quiz_App\Quiz_Api\Business_Layer\obj\Debug\net8.0\ref\Business_Layer.dll

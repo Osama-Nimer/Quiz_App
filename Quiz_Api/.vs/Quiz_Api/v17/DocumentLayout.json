@@ -1,0 +1,67 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\FullStack\\Projects\\Quiz_App\\Quiz_Api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B700E4A7-B40F-4130-84D3-EAAD6ED526B2}|Data_Layer\\Data_Layer.csproj|c:\\users\\asus\\documents\\fullstack\\projects\\quiz_app\\quiz_api\\data_layer\\connnetion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B700E4A7-B40F-4130-84D3-EAAD6ED526B2}|Data_Layer\\Data_Layer.csproj|solutionrelative:data_layer\\connnetion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{7f40df72-066b-4810-a08b-c0fbed76c948}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Connnetion.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\FullStack\\Projects\\Quiz_App\\Quiz_Api\\Data_Layer\\Connnetion.cs",
+              "RelativeDocumentMoniker": "Data_Layer\\Connnetion.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\FullStack\\Projects\\Quiz_App\\Quiz_Api\\Data_Layer\\Connnetion.cs",
+              "RelativeToolTip": "Data_Layer\\Connnetion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T15:30:33.108Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 7,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

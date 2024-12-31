@@ -6,17 +6,19 @@ namespace Data_Layer
     {
         public class UserDTO
         {
-            public UserDTO(int userID, string username,string email, string password)
+            public UserDTO(int userID, string username,string email, string password , bool role)
             {
                 this.UserID = userID;
                 this.UserName = username;
                 this.Email = email;
                 this.Password = password;
+                this.Role = role;
             }
             public int UserID { get; set; }
             public string UserName { get; set; }
             public string Email { get; set; }
             public string Password { get; set; }
+            public bool Role { get; set; } = false;
         }
 
         public static List<UserDTO> GetAllUsers()
@@ -35,7 +37,8 @@ namespace Data_Layer
                         (int)reader["UserID"],
                         (string)reader["UserName"],
                         (string)reader["Email"],
-                        (string)reader["Password"]
+                        (string)reader["Password"],
+                        (bool)reader["Role"]
                         ));
 
                 };
@@ -52,7 +55,7 @@ namespace Data_Layer
 
         public static UserDTO GetUserByUserID(UserDTO User)
         {
-            UserDTO user = new UserDTO(-1, "","", "");
+            UserDTO user = new UserDTO(-1, "","", "",false);
             bool IsFound = false;
             SqlConnection connection = new SqlConnection(Connetion.connectionString);
             string Query = @"Select * From Users Where UserID = @UserID";
@@ -69,6 +72,7 @@ namespace Data_Layer
                     user.UserName = (string)reader["UserName"];
                     user.Email = (string)reader["Email"];
                     user.Password = (string)reader["Password"];
+                    user.Role = (bool)reader["Role"];
                 }
                 else
                     IsFound = false;
@@ -83,13 +87,13 @@ namespace Data_Layer
         }
 
 
-        public static UserDTO GetUserByUserNameAndPassword(string UserName, string Password)
+        public static UserDTO GetUserByUserNameAndPassword(string Username, string Password)
         {
-            UserDTO user = null;  // Set to null initially
+            UserDTO user = null;
             SqlConnection connection = new SqlConnection(Connetion.connectionString);
-            string query = "SELECT * FROM Users WHERE UserName = @UserName AND Password = @Password";
+            string query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Username", Username);
             command.Parameters.AddWithValue("@Password", Password);
 
             try
@@ -98,18 +102,24 @@ namespace Data_Layer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
+                    Console.WriteLine("User found!");
                     user = new UserDTO(
                         (int)reader["UserID"],
-                        (string)reader["UserName"],
+                        (string)reader["Username"],
                         (string)reader["Email"],
-                        (string)reader["Password"] // Get password from database
+                        (string)reader["Password"],
+                        (bool)reader["Role"]
                     );
+                }
+                else
+                {
+                    Console.WriteLine("No user found with the provided username and password.");
                 }
                 reader.Close();
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Error: " + e.Message);
             }
             finally
             {
@@ -120,12 +130,13 @@ namespace Data_Layer
         }
 
 
+
         public static int AddNewUser(UserDTO User)
         {
             int userID = -1;
             SqlConnection connection = new SqlConnection(Connetion.connectionString);
-            string Query = @"INSERT INTO Users(UserName,Email,Password)
-                                VALUES(@UserName,@Email, @Password);
+            string Query = @"INSERT INTO Users(UserName,Email,Password,Role)
+                                VALUES(@UserName,@Email, @Password,0);
                                 SELECT SCOPE_IDENTITY();";
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue("@UserName", User.UserName);
@@ -179,6 +190,49 @@ namespace Data_Layer
                 con.Close();
             }
             return IsFound ;
+        }
+
+
+        public static bool UpdateUser(UserDTO User)
+        {
+            int rows = 0;
+            SqlConnection connection = new SqlConnection(Connetion.connectionString);
+            string Query = "UPDATE Users SET Role = 1 WHERE UserID = @UserID";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@UserID", User.UserID);
+            try
+            {
+                connection.Open();
+                rows = command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { connection.Close(); }
+            return (rows > 0);
+        }
+
+
+        public static bool DeleteUser(UserDTO User)
+        {
+            int rows = 0;
+            SqlConnection connection = new SqlConnection(Connetion.connectionString);
+            string Query = "DELETE FROM Users  WHERE UserID = @UserID";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@UserID", User.UserID);
+            try
+            {
+                connection.Open();
+                rows = command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return (rows > 0);
         }
     }
 }

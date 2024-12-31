@@ -9,10 +9,11 @@ namespace Business_Layer
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public bool Role { get; set; } = false;
         public enMode Mode = enMode.AddNew;
         public UserDTO UDTO
         {
-            get { return (new UserDTO(this.UserID, this.UserName, this.Email,this.Password)); }
+            get { return (new UserDTO(this.UserID, this.UserName, this.Email,this.Password,this.Role)); }
         }
         public enum enMode
         {
@@ -26,15 +27,17 @@ namespace Business_Layer
             this.UserName = UDTO.UserName;
             this.Email = UDTO.Email;
             this.Password = UDTO.Password;
+            this.Role = UDTO.Role;
             Mode = cMdde;
         }
 
-        private User(int UserID, string UserName,string Email, string Password)
+        private User(int UserID, string UserName,string Email, string Password , bool role = false)
         {
             this.UserID = UserID;
             this.UserName = UserName;
             this.Email = Email;
             this.Password = Password;
+            this.Role = role;
             Mode = enMode.Update;
         }
 
@@ -50,6 +53,11 @@ namespace Business_Layer
             this.UserID = UsersData.AddNewUser(UDTO);
             return (UserID != -1);
         }
+        
+        private bool _UpdateUser()
+        {
+            return UsersData.UpdateUser(UDTO);
+        }
 
         public bool Save()
         {
@@ -63,6 +71,8 @@ namespace Business_Layer
                     }
                     else
                         return false;
+                case enMode.Update:
+                    return _UpdateUser();
             }
             return false;
         }
@@ -73,7 +83,7 @@ namespace Business_Layer
             UserDTO User = UsersData.GetUserByUserID(user);
 
             if (User != null)
-                return new User(User.UserID, User.UserName,User.Email , User.Password);
+                return new User(User.UserID, User.UserName,User.Email , User.Password, User.Role);
             else
                 return null;
 
@@ -84,7 +94,7 @@ namespace Business_Layer
 
             if (user != null)
             {
-                return new User(user.UserID, user.UserName,user.Email, user.Password);
+                return new User(user.UserID, user.UserName,user.Email, user.Password ,user.Role);
             }
             else
             {
@@ -97,5 +107,9 @@ namespace Business_Layer
             return UsersData.IsUserExist(user);
         }
 
+        public static bool DeleteUser(UserDTO user)
+        {
+            return UsersData.DeleteUser(user);
+        }
     }
 }

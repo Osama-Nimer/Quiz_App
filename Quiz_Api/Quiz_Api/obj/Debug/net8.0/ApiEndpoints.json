@@ -125,6 +125,22 @@
   },
   {
     "ContainingType": "Quiz_Api.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/DeleteUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Data_Layer.UsersData\u002BUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/User/GetAllUsers",
     "HttpMethod": "GET",
@@ -153,6 +169,32 @@
     "Parameters": [
       {
         "Name": "UserDTO",
+        "Type": "Data_Layer.UsersData\u002BUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.UsersData\u002BUserDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/UpdateUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTO",
         "Type": "Data_Layer.UsersData\u002BUserDTO",
         "IsRequired": true
       }

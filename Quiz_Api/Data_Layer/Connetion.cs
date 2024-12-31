@@ -2,6 +2,6 @@
 {
     public class Connetion
     {
-        public static string connectionString = "Server=.;Database=Quiz_App;User Id=sa;Password=sa123456;TrustServerCertificate=True;Encrypt=False;";
+        public static string connectionString = "Server=.;Database=QuizApp;User Id=sa;Password=sa123456;TrustServerCertificate=True;Encrypt=False;";
     }
 }

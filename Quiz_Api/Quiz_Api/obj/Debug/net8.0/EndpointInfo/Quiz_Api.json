@@ -5,26 +5,26 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Quiz/GetQuiz": {
+    "/api/Question/GetQuestion": {
       "post": {
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/QuizDTO"
+                "$ref": "#/components/schemas/QuestionDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/QuizDTO"
+                "$ref": "#/components/schemas/QuestionDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/QuizDTO"
+                "$ref": "#/components/schemas/QuestionDTO"
               }
             }
           }
@@ -35,17 +35,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               }
             }
@@ -53,10 +53,10 @@
         }
       }
     },
-    "/api/Quiz/GetAllQuizzes": {
+    "/api/Question/GetAllQuestions": {
       "get": {
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "responses": {
           "200": {
@@ -64,17 +64,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               }
             }
@@ -82,26 +82,26 @@
         }
       }
     },
-    "/api/Quiz/AddNewQuiz": {
+    "/api/Question/AddNewQuestion": {
       "post": {
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/QuizDTO"
+                "$ref": "#/components/schemas/QuestionDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/QuizDTO"
+                "$ref": "#/components/schemas/QuestionDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/QuizDTO"
+                "$ref": "#/components/schemas/QuestionDTO"
               }
             }
           }
@@ -112,17 +112,96 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuizDTO"
+                  "$ref": "#/components/schemas/QuestionDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Question/DeleteQuestion": {
+      "delete": {
+        "tags": [
+          "Question"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Question/UpdateQuestion": {
+      "put": {
+        "tags": [
+          "Question"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
                 }
               }
             }
@@ -385,14 +464,14 @@
   },
   "components": {
     "schemas": {
-      "QuizDTO": {
+      "QuestionDTO": {
         "type": "object",
         "properties": {
-          "quizID": {
+          "questionID": {
             "type": "integer",
             "format": "int32"
           },
-          "subject": {
+          "questionText": {
             "type": "string",
             "nullable": true
           }

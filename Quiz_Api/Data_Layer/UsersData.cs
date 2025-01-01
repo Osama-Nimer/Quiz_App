@@ -53,14 +53,14 @@ namespace Data_Layer
         }
 
 
-        public static UserDTO GetUserByUserID(UserDTO User)
+        public static UserDTO GetUserByUserID(int UserID)
         {
             UserDTO user = new UserDTO(-1, "","", "",false);
             bool IsFound = false;
             SqlConnection connection = new SqlConnection(Connetion.connectionString);
             string Query = @"Select * From Users Where UserID = @UserID";
             SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@UserID", User.UserID);
+            command.Parameters.AddWithValue("@UserID", UserID);
             try
             {
                 connection.Open();
@@ -68,7 +68,7 @@ namespace Data_Layer
                 if (reader.Read())
                 {
                     IsFound = true;
-                    user.UserID = User.UserID;
+                    user.UserID = UserID;
                     user.UserName = (string)reader["UserName"];
                     user.Email = (string)reader["Email"];
                     user.Password = (string)reader["Password"];

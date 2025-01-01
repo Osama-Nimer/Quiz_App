@@ -39,7 +39,7 @@ namespace Business_Layer
             Mode = enMode.Update;
         }
 
-        public static List<QuestionDTO> GetAllQuizzes()
+        public static List<QuestionDTO> GetAllQuestions()
         {
             return QuestionsData.GetAllQuizzes();
         }
@@ -75,7 +75,7 @@ namespace Business_Layer
         }
 
 
-        public static Question FindQuizbyQuizID(QuestionDTO question)
+        public static Question FindQuestionbyQuestionID(QuestionDTO question)
         {
 
             QuestionDTO Question = QuestionsData.GetQuizByQuizID(question);

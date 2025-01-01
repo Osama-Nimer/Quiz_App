@@ -77,10 +77,10 @@ namespace Business_Layer
             return false;
         }
 
-        public static User FindUserbyUserID(UserDTO user)
+        public static User FindUserbyUserID(int userID)
         {
 
-            UserDTO User = UsersData.GetUserByUserID(user);
+            UserDTO User = UsersData.GetUserByUserID(userID);
 
             if (User != null)
                 return new User(User.UserID, User.UserName,User.Email , User.Password, User.Role);

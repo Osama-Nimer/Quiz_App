@@ -1,9 +1,7 @@
 ﻿using Data_Layer;
 using Business_Layer;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static Data_Layer.QuestionsData;
-using static Data_Layer.UsersData;
 
 namespace Quiz_Api.Controllers
 {
@@ -14,10 +12,10 @@ namespace Quiz_Api.Controllers
         [HttpPost("GetQuestion")]
         public ActionResult<QuestionsData.QuestionDTO> GetQuestion(QuestionsData.QuestionDTO questionDTO)
         {
-            Question Question = Question.FindQuizbyQuizID(questionDTO);
+            Question Question = Question.FindQuestionbyQuestionID(questionDTO);
             if (Question == null)
             {
-                return NotFound("No Quiz Found!");
+                return NotFound("No Question Found!");
             }
             return Ok(new QuestionsData.QuestionDTO(Question.QuestionID, Question.QuestionText));
         }
@@ -26,10 +24,10 @@ namespace Quiz_Api.Controllers
         [HttpGet("GetAllQuestions")]
         public ActionResult<QuestionsData.QuestionDTO> GetAllQuizzes()
         {
-            List<QuestionsData.QuestionDTO> quizzes = Question.GetAllQuizzes();
+            List<QuestionsData.QuestionDTO> quizzes = Question.GetAllQuestions();
             if (quizzes.Count == 0)
             {
-                return NotFound("No Quizzes Found!");
+                return NotFound("No Questions Found!");
             }
             return Ok(quizzes);
         }
@@ -40,7 +38,7 @@ namespace Quiz_Api.Controllers
         {
             if (questionDTO == null || string.IsNullOrEmpty(questionDTO.QuestionText))
             {
-                return BadRequest("Invalid task data or user does not exist.");
+                return BadRequest("Invalid data or Question does not exist.");
             }
 
             Question newQuestion = new Question(new QuestionsData.QuestionDTO(questionDTO.QuestionID, questionDTO.QuestionText));
@@ -69,7 +67,7 @@ namespace Quiz_Api.Controllers
         [HttpPut("UpdateQuestion")]
         public ActionResult<QuestionDTO> Update(QuestionDTO QuestionDTO)
         {
-            Business_Layer.Question question = Business_Layer.Question.FindQuizbyQuizID(QuestionDTO);
+            Business_Layer.Question question = Business_Layer.Question.FindQuestionbyQuestionID(QuestionDTO);
             question.QuestionText = QuestionDTO.QuestionText;
             if (question.QuestionID == null)
             {

@@ -145,6 +145,7 @@ namespace Data_Layer
 
                 throw;
             }
+            finally { connection.Close(); }
             return (rows > 0);
         }
 

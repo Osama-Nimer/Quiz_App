@@ -67,17 +67,18 @@ namespace Quiz_Api.Controllers
 
 
         [HttpPut("UpdateQuestion")]
-        public ActionResult<UserDTO> Update(QuestionDTO QuestionDTO)
+        public ActionResult<QuestionDTO> Update(QuestionDTO QuestionDTO)
         {
             Business_Layer.Question question = Business_Layer.Question.FindQuizbyQuizID(QuestionDTO);
-            if (question == null)
+            question.QuestionText = QuestionDTO.QuestionText;
+            if (question.QuestionID == null)
             {
                 return NotFound($"Question {QuestionDTO.QuestionID} not found.");
             }
 
             if (!question.Save())
             {
-                return BadRequest("Failed to update the user.");
+                return BadRequest("Failed to update the Question.");
             }
 
             return Ok(QuestionDTO);

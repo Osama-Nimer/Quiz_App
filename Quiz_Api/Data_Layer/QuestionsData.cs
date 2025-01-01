@@ -109,7 +109,7 @@ namespace Data_Layer
         {
             int rows = 0;
             SqlConnection connection = new SqlConnection(Connetion.connectionString);
-            string Query = "UPDATE Questions SET QuestionText = QuestionText WHERE QuestionID = @QuestionID";
+            string Query = "UPDATE Questions SET QuestionText = @QuestionText WHERE QuestionID = @QuestionID;";
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue("@QuestionID", Question.QuestionID);
             command.Parameters.AddWithValue("@QuestionText", Question.QuestionText);

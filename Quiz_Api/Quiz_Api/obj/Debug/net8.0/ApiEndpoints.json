@@ -103,7 +103,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Data_Layer.UsersData\u002BUserDTO",
+        "Type": "Data_Layer.QuestionsData\u002BQuestionDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

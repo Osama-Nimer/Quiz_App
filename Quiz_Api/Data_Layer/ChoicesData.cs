@@ -48,8 +48,9 @@ namespace Data_Layer
                             (bool)reader["IsCorrect"]
                             )
                         );
-                    reader.Close();
+                    
                 }
+                reader.Close();
             }
             catch (Exception)
             {
@@ -93,11 +94,10 @@ namespace Data_Layer
         {
             int ID = -1;
             SqlConnection connection = new SqlConnection (Connetion.connectionString);
-            string Query = @"INSERT INTO Choices(ChoiceID,QuestionID,ChoiceTest,IsCorrect)
-                                VALUES(@ChoiceID,@QuestionID,@ChoiceText,@IsCorrect);
+            string Query = @"INSERT INTO Choices(QuestionID,ChoiceText,IsCorrect)
+                                VALUES(@QuestionID,@ChoiceText,@IsCorrect);
                                 SELECT SCOPE_IDENTITY();";
             SqlCommand cmd = new SqlCommand (Query, connection);
-            cmd.Parameters.AddWithValue("@ChoiceID", choice.ChoiceID);
             cmd.Parameters.AddWithValue("@QuestionID", choice.QuestionID);
             cmd.Parameters.AddWithValue("@ChoiceText", choice.ChoiceText);
             cmd.Parameters.AddWithValue("@IsCorrect", choice.isCorrect);

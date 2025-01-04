@@ -1,5 +1,207 @@
 [
   {
+    "ContainingType": "Quiz_Api.Controllers.AnswerController",
+    "Method": "AddNewAnswer",
+    "RelativePath": "api/Answer/AddNewAnswer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AnswerDTO",
+        "Type": "Data_Layer.AnswersData\u002BAnswerDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.AnswersData\u002BAnswerDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.AnswerController",
+    "Method": "Delete",
+    "RelativePath": "api/Answer/DeleteAnswer",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Answer",
+        "Type": "Data_Layer.AnswersData\u002BAnswerDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.AnswerController",
+    "Method": "GetAllAnswers",
+    "RelativePath": "api/Answer/GetAllAnswers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.AnswersData\u002BAnswerDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.AnswerController",
+    "Method": "GetAnswer",
+    "RelativePath": "api/Answer/GetAnswer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AnswerDTO",
+        "Type": "Data_Layer.AnswersData\u002BAnswerDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.AnswersData\u002BAnswerDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.ChoiceController",
+    "Method": "AddNewChoice",
+    "RelativePath": "api/Choice/AddNewChoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "choiceDTO",
+        "Type": "Data_Layer.ChoicesData\u002BChoiceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.ChoicesData\u002BChoiceDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.ChoiceController",
+    "Method": "Delete",
+    "RelativePath": "api/Choice/DeleteChoice",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Choice",
+        "Type": "Data_Layer.ChoicesData\u002BChoiceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.ChoiceController",
+    "Method": "GetAllChoices",
+    "RelativePath": "api/Choice/GetAllChoices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.ChoicesData\u002BChoiceDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.ChoiceController",
+    "Method": "GetChoice",
+    "RelativePath": "api/Choice/GetChoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ChoiceDTO",
+        "Type": "Data_Layer.ChoicesData\u002BChoiceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.ChoicesData\u002BChoiceDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Quiz_Api.Controllers.ChoiceController",
+    "Method": "Update",
+    "RelativePath": "api/Choice/UpdateChoice",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ChoiceDTO",
+        "Type": "Data_Layer.ChoicesData\u002BChoiceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data_Layer.QuestionsData\u002BQuestionDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Quiz_Api.Controllers.QuestionController",
     "Method": "AddNewQuiz",
     "RelativePath": "api/Question/AddNewQuestion",

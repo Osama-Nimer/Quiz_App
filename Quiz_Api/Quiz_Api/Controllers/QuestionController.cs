@@ -12,7 +12,7 @@ namespace Quiz_Api.Controllers
         [HttpPost("GetQuestion")]
         public ActionResult<QuestionsData.QuestionDTO> GetQuestion(QuestionsData.QuestionDTO questionDTO)
         {
-            Question Question = Question.FindQuestionbyQuestionID(questionDTO);
+            Question Question = Question.FindQuestionbyQuestionID(questionDTO.QuestionID);
             if (Question == null)
             {
                 return NotFound("No Question Found!");
@@ -67,7 +67,7 @@ namespace Quiz_Api.Controllers
         [HttpPut("UpdateQuestion")]
         public ActionResult<QuestionDTO> Update(QuestionDTO QuestionDTO)
         {
-            Business_Layer.Question question = Business_Layer.Question.FindQuestionbyQuestionID(QuestionDTO);
+            Business_Layer.Question question = Business_Layer.Question.FindQuestionbyQuestionID(QuestionDTO.QuestionID);
             question.QuestionText = QuestionDTO.QuestionText;
             if (question.QuestionID == null)
             {

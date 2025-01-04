@@ -75,10 +75,10 @@ namespace Business_Layer
         }
 
 
-        public static Question FindQuestionbyQuestionID(QuestionDTO question)
+        public static Question FindQuestionbyQuestionID(int questionId)
         {
 
-            QuestionDTO Question = QuestionsData.GetQuizByQuizID(question);
+            QuestionDTO Question = QuestionsData.GetQuizByQuizID(questionId);
 
             if (Question != null)
                 return new Question(Question.QuestionID, Question.QuestionText);

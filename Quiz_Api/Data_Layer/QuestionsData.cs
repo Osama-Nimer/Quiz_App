@@ -46,14 +46,14 @@ namespace Data_Layer
 
 
 
-        public static QuestionDTO GetQuizByQuizID(QuestionDTO question)
+        public static QuestionDTO GetQuizByQuizID(int questionId)
         {
             QuestionDTO Question = new QuestionDTO(-1, "");
             bool IsFound = false;
             SqlConnection connection = new SqlConnection(Connetion.connectionString);
             string Query = @"Select * From Questions Where QuestionID = @QuestionID";
             SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@QuestionID", question.QuestionID);
+            command.Parameters.AddWithValue("@QuestionID", questionId);
             try
             {
                 connection.Open();
@@ -61,7 +61,7 @@ namespace Data_Layer
                 if (reader.Read())
                 {
                     IsFound = true;
-                    Question.QuestionID= question.QuestionID;
+                    Question.QuestionID= questionId;
                     Question.QuestionText= (string)reader["QuestionText"];
                 }
                 else

@@ -6,8 +6,8 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            Business_Layer.User user = Business_Layer.User.FindUserbyUserNameAndPassword("Osama Nimer","osama@454");
-            Console.WriteLine(user.Role);
+            Business_Layer.Choice c = Business_Layer.Choice.FindChoicebyChoiceID(1);
+            Console.WriteLine(c.QuestionInfo.QuestionText);
         }
     }
 }
